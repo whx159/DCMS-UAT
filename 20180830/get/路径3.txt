@@ -1,1 +1,0 @@
-D:\HSBC_DCMS\Source\DCMS\WebContent\WEB-INF\classes\com\huateng\hsbc\getter
