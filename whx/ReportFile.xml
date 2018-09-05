@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommQry title="报表导出" type="form" interface="true" navigate=""
+	pagesize="10" async="true" databusid="" transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="">
+	<Include id="BankParam" />
+	<Fields>
+		<Field id="filename" desc="ReportFileList.Field.fileName" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="128" default="" xpath="" />	
+		<Field id="filetype" desc="ReportFileList.Field.fileType" status="F" require="true" edittype="select" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="2" default="" xpath="" translated="DATA_DIC.2001"/>	
+		<Field id="hkfiletype" desc="ReportFileList.Field.fileType" status="F" require="true" edittype="select" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="2" default="" xpath="" translated="DATA_DIC.2009"/>	
+		<Field id="sgfiletype" desc="ReportFileList.Field.fileType" status="F" require="true" edittype="select" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="2" default="" xpath="" translated="DATA_DIC.2010"/>	
+		<Field id="merid" desc="ReportFileList.Field.merid" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="15" default="" xpath="" />	
+		<Field id="createdate" desc="ReportFileList.Field.createDate" status="F" require="false" edittype="date" rules="xssSave" datatype="String" readonly="false" primary="true" type="String" size="8" default="" xpath="" />	
+		<Field id="createdate1" desc="ReportFileList.Field.createDate1" status="F" require="false" edittype="date" rules="xssSave" datatype="String" readonly="false" primary="true" type="String" size="8" default="" xpath="" />	
+		<Field id="enddate" desc="ReportFileList.Field.endDate" status="F" require="false" edittype="date" rules="xssSave" datatype="String" readonly="false" primary="true" type="String" size="8" default="" xpath="" />	
+		<Field id="filepath" desc="ReportFileList.Field.filePath" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="128" default="" xpath="" />
+		<Field id="type" desc="ReportFileList.Field.type" status="F" require="true" edittype="select" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="2" default="" xpath="" translated="DATA_DIC.1013"/>	
+	</Fields>
+	<Where>
+	</Where>
+	<Operations>
+		<Button id="btAdd" name="btAdd" desc="ReportFileList.Operations.btAdd" operation="" url="#"
+				txn="" icon="" updateClass=""/>
+		<Button id="btSend" name="btSend" desc="Test Send Email" operation="" url="#"
+				txn="" icon="" updateClass=""/>
+		<Button id="btEmailRecon" name="btSend" desc="Email Recon" operation="" url="#"
+				txn="" icon="" updateClass=""/>
+		<Button id="btSendMq" name="btSendMq" desc="Test Send MQ" operation="" url="#"
+				txn="" icon="" updateClass=""/>
+	</Operations>
+</CommQry>
