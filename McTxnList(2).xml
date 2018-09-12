@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommQry title="商户信息维护" type="call" interface="true" navigate=""
+	pagesize="10" async="true" databusid="" transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.hsbc.getter.McTxnGetter">
+	<Include id="BankParam" />
+	
+	<PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="McTxnInfo"/>
+	
+	<Fields>
+	
+		<Field id="select" desc="选择" method="None" edittype="checkbox" datatype="boolean" xpath="" />
+		<Field id="orderno" desc="CommQry.Fields.Field.orderno" status="F" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="30" default="" xpath="/orderno" />	
+		<Field id="workdate" desc="CommQry.Fields.Field.workdate" status="F" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="8" default="" xpath="/workdate" />
+		<Field id="txndate" desc="CommQry.Fields.Field.workdate" status="F" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="8" default="" xpath="/txndate" method="com.huateng.ebank.business.common.CQMethod.ConversionUTCTime" />
+		<Field id="merid" desc="CommQry.Fields.Field.merid" status="F" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="15" default="" xpath="/merid" />
+		<Field id="mername" desc="CommQry.Fields.Field.mername" status="F" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="128" default="" xpath="/mername" />  
+		<Field id="mernm" desc="CommQry.Fields.Field.mername" status="F" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="128" default="" xpath="/mernm" />  
+		<Field id="paytype" desc="CommQry.Fields.Field.paytype" status="F" require="true" edittype="select" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="2" default="" xpath="/paytype" translated="DATA_DIC.40002"/> 
+		<Field id="amt" desc="CommQry.Fields.Field.amt" status="F" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="16" default="" xpath="/amtDesc" /> 	
+		<Field id="txnamt" desc="CommQry.Fields.Field.amt" status="F" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="16" default="" xpath="/txnamt" /> 	
+		<Field id="merfee" desc="CommQry.Fields.Field.merfee" status="F" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="16" default="" xpath="/merfeeDesc" /> 	
+		<Field id="agtfee" desc="CommQry.Fields.Field.merfee" status="F" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="16" default="" xpath="/agtfee" /> 	
+		<Field id="chlfee" desc="CommQry.Fields.Field.merfeechlfee" status="F" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="16" default="" xpath="/chlfeeDesc" />
+		<Field id="hsbcfee" desc="CommQry.Fields.Field.merfeechlfee" status="F" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="16" default="" xpath="/hsbcfee" />
+		<Field id="status" desc="CommQry.Fields.Field.status" status="F" require="true" edittype="select" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="2" default="" xpath="/status" translated="DATA_DIC.50002"/>
+		<Field id="ordertype" desc="CommQry.Fields.Field.ordertype" status="N" require="true" edittype="select" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="2" default="" xpath="/ordertype" />  
+		<Field id="chltype" desc="CommQry.Fields.Field.chltype" status="N" require="true" edittype="select" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="20" default="" xpath="/chltype" /> 	  	  	  	  	  	  	  
+		<Field id="curcd" desc="CommQry.Fields.Field.curcd" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="3" default="" xpath="/curcd" /> 	   	
+		<Field id="merip" desc="CommQry.Fields.Field.merip" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="20" default="" xpath="/merip" /> 	
+		<Field id="orgorderno" desc="CommQry.Fields.Field.orgorderno" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="30" default="" xpath="/orgorderno" />	
+		<Field id="cancelamt" desc="CommQry.Fields.Field.cancelamt" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="16" default="" xpath="/cancelamtDesc" /> 
+		<Field id="goodsdes" desc="CommQry.Fields.Field.goodsdes" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="128" default="" xpath="/goodsdes" /> 	  
+		<Field id="goodsinfo" desc="CommQry.Fields.Field.goodsinfo" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="600" default="" xpath="/goodsinfo" /> 	  
+		<Field id="goodstag" desc="CommQry.Fields.Field.goodstag" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="32" default="" xpath="/goodstag" /> 	
+		<Field id="merurl" desc="CommQry.Fields.Field.merurl" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="256" default="" xpath="/merurl" />   
+		<Field id="merntyurl" desc="CommQry.Fields.Field.merntyurl" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="256" default="" xpath="/merntyurl" /> 	
+		<Field id="subappid" desc="CommQry.Fields.Field.subappid" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="32" default="" xpath="/subappid" /> 
+		<Field id="limitpay" desc="CommQry.Fields.Field.limitpay" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="32" default="" xpath="/limitpay" />	  	
+		<Field id="clsTime" desc="CommQry.Fields.Field.clsTime" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="8" default="" xpath="/clsTime" />	 
+		<Field id="fytermid" desc="CommQry.Fields.Field.fytermid" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="20" default="" xpath="/fytermid" />	  
+		<Field id="ranstr" desc="CommQry.Fields.Field.ranstr" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="32" default="" xpath="/ranstr" />	
+		<Field id="sign" desc="CommQry.Fields.Field.sign" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="20" default="" xpath="/sign" />	  
+		<Field id="msgcode" desc="CommQry.Fields.Field.msgcode" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="16" default="" xpath="/msgcode" /> 	
+		<Field id="msginfo" desc="CommQry.Fields.Field.msginfo" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="128" default="" xpath="/msginfo" />	 
+		<Field id="checkstate" desc="CommQry.Fields.Field.checkstate" status="N" require="true" edittype="select" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="2" default="" xpath="/checkstate" /> 	
+		<Field id="fyorderno" desc="CommQry.Fields.Field.fyorderno" status="N" require="true" edittype="select" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="30" default="" xpath="/fyorderno" /> 	  
+		<Field id="sessid" desc="CommQry.Fields.Field.sessid" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="64" default="" xpath="/sessid" /> 
+		<Field id="qrcode" desc="CommQry.Fields.Field.qrcode" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="64" default="" xpath="/qrcode" /> 	  	  		 	  	  		  		  	
+		<Field id="traceno" desc="CommQry.Fields.Field.traceno" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="12" default="" xpath="/traceno" /> 	  	  		 	  	  		  		  	
+		<Field id="chlid" desc="CommQry.Fields.Field.chlid" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="32" default="" xpath="/chlid" /> 	  	  		 	  	  		  		  	
+		<Field id="chltransid" desc="CommQry.Fields.Field.chltransid" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="40" default="" xpath="/chltransid" /> 	  	  		 	  	  		  		  	
+		<Field id="chlcanid" desc="CommQry.Fields.Field.chlcanid" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="40" default="" xpath="/chlcanid" /> 	  	  		 	  	  		  		  	
+		<Field id="clrdate" desc="CommQry.Fields.Field.clrdate" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="8" default="" xpath="/clrdate" /> 	  	  		 	  	  		  		  	
+		<Field id="couponamt" desc="CommQry.Fields.Field.couponamt" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="16" default="" xpath="/couponamtDesc" /> 	  	  		 	  	  		  		  	
+		<Field id="buyerid" desc="CommQry.Fields.Field.buyerid" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="128" default="" xpath="/buyerid" /> 	  	  		 	  	  		  		  	
+		<Field id="orderTime" desc="CommQry.Fields.Field.orderTime" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="14" default="" xpath="/orderTime" /> 
+		<Field id="finishTime" desc="CommQry.Fields.Field.finishTime" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="14" default="" xpath="/finishTime" /> 
+		<Field id="openid" desc="CommQry.Fields.Field.openid" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="128" default="" xpath="/openid" /> 
+		<Field id="subopenid" desc="CommQry.Fields.Field.subopenid" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="128" default="" xpath="/subopenid" /> 
+		<Field id="appid" desc="CommQry.Fields.Field.appid" status="N" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="32" default="" xpath="/appid" /> 
+		<Field id="rsv1" desc="CommQry.Fields.Field.rsv1" status="N"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv1" size="20" />
+		<Field id="rsv2" desc="CommQry.Fields.Field.rsv2" status="N"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv2" size="20" />
+		<Field id="rsv3" desc="CommQry.Fields.Field.rsv3" status="N"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv3" size="35" />
+		<Field id="rsv4" desc="CommQry.Fields.Field.rsv4" status="N"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv4" size="200" />
+		<Field id="rsv5" desc="CommQry.Fields.Field.rsv5" status="N"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv5" size="128" />	
+		<Field id="payeracct" desc="CommQry.Fields.Field.payeracct" status="N"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/payeracct" size="32" />
+		<Field id="cardtype" desc="CommQry.Fields.Field.cardtype" status="N"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/cardtype" size="6" />
+		<Field id="payerbank" desc="CommQry.Fields.Field.payerbank" status="N"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/payerbank" size="14" />
+		<Field id="payertag" desc="CommQry.Fields.Field.payertag" status="N"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/payertag" size="20" />
+		<Field id="fyerfid" desc="CommQry.Fields.Field.fyerfid" status="N"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/fyerfid" size="32" />
+		<Field id="transcode" desc="CommQry.Fields.Field.transcode" status="N"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/transcode" size="20" /> 
+		<Field id="msgflag" desc="CommQry.Fields.Field.msgflag" status="N"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/msgflag" size="1" />  
+		<Field id="pmtchan" desc="CommQry.Fields.Field.pmtchan" status="F"  edittype="select" rules="xssSave" datatype="string" readonly="false" xpath="/pmtchan" size="3" translated="DATA_DIC.1032"/>	 	  	  		 	  		 	  	  		  		  		  	  		 	  	  		  		  		  	  		 	  	  		  		  		 	  	  		  	  	  		 	  		 	  	  		  	  	  		 	  	  		 		  	  	  	  		 	  	  		  	  	 	  	  	  		 	  	  		 		  	  	  	  		 	  	  		  	  	  	  	 	  	  	  	  	  	  	 	  	  	  	  	  	 	  
+	</Fields>
+	<Where>
+		<DateTextBox id="qstartdate" desc="CommQry.Where.DateTextBox.qstartdate" edittype="text" datatype="date" size="8" index="0" />
+		<DateTextBox id="qenddate" desc="CommQry.Where.DateTextBox.qenddate" edittype="text" datatype="date" size="8" index="1" />
+		<TextBox id="qorderno" desc="CommQry.Where.TextBox.qorderno" edittype="text" status="F" datatype="string" size="30" index="2" />
+		<TextBox id="qmerid" desc="CommQry.Where.TextBox.qmerid" edittype="text" status="F" datatype="string" size="15" index="3" />
+		<!--  <Option id="qpaytype" desc="CommQry.Where.Option.qpaytype" edittype="select" status="N" translated="DATA_DIC.40002" datatype="string" size="2" index="3" />-->
+        <TextBox id="qamt" desc="CommQry.Where.TextBox" edittype="text" status="F" datatype="string" size="16" index="4" />
+		<Option id="qstatus" desc="CommQry.Where.Option.qstatus" edittype="select" status="F" translated="DATA_DIC.50002" datatype="string" size="2" index="5" />
+	</Where>
+	<Operations>
+	</Operations>
+</CommQry>
