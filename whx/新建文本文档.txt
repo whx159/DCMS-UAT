@@ -1,0 +1,4 @@
+alter table mc_merinfo add SHAREDKEY VARCHAR2(100);
+alter table mc_merinfo_tmp add SHAREDKEY VARCHAR2(100);
+alter table mc_merinfo add cerbindstatus VARCHAR2(1);
+alter table mc_merinfo_tmp add cerbindstatus VARCHAR2(1);
