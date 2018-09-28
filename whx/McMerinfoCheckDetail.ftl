@@ -546,8 +546,8 @@ function initCallGetter_post(){
 		McMerinfoDetailList_dataset.setReadOnly(true);
 		McFeerateSelDetailList_dataset.setReadOnly(true);
 		
-	if(v_country != "ID" && v_country != "TH"){
-		McMerinfoTmpList_dataset.setFieldRequired("sharedkey",false);
+	if(v_country == "ID" || v_country == "TH"){
+		McMerinfoTmpList_dataset.setFieldRequired("sharedkey",true);
 	}	
 	
 	if(v_country == "HK"){
