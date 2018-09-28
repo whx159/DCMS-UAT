@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	navigate:导航信息
+	type:方式（sql|call)
+	interface:是否显示输入条件页面(true|false)
+	databusid:数据总线编号
+	transdataactionurl:数据整理URL
+	txnlogflag:true记录日志
+	async:异步提交标志
+	pagesize:页面显示记录数(缺省为10)
+-->
+<CommQry title="SysParamsEntryDetail.title" navigate="系统维护  &gt; 系统参数设置" type="call"
+         interface="true" pagesize="10" async="true" databusid=""
+         transdataactionurl="/trans/TransDataAction.do"
+         txnlogflag="true"
+         getterclassname="">
+    <Include id="BankParam"/>
+    <!--
+    <PageQryExp type="CSV" limit="true" encoding="UTF-8" url="/trans/qryExp.do" directory="F:/upload"/>
+    -->
+    <Fields>
+        <!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
+        <!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
+        <Field id="tskId" desc="任务编号" datatype="string" size="32"
+               readonly="true" xpath="/tskId"/>
+    </Fields>
+
+    <Operations>
+        <Button id="btClose" name="btClose" desc="OperMngCheckDetail.Operations.btClose" operation="syncsubmit" icon="icon-back"
+                url="#" txn=""/>
+        <Button id="btApprove" name="btApprove" desc="OperMngCheckDetail.Operations.btApprove" operation="asysubmit" icon="icon-ok"
+                updateClass="com.huateng.report.system.updater.OperCheckApproveUpdater"
+                url="#" txn=""/>
+        <Button id="btReject" name="btReject" desc="OperMngCheckDetail.Operations.btReject" operation="asysubmit" icon="icon-no"
+                updateClass="com.huateng.report.system.updater.OperCheckRejectUpdater"
+                url="#" txn="" />
+    </Operations>
+
+
+</CommQry>

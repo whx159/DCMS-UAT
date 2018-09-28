@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  用于直接生成SQL语句，支持同步和异步提交 -->
+<!--  title:标题
+	navigate:导航信息
+	type:方式（sql|call)
+	interface:是否显示输入条件页面(true|false)
+	databusid:数据总线编号
+	transdataactionurl:数据整理URL
+	async:异步提交标志
+	pagesize:页面显示记录数(缺省为10)
+-->
+<CommQry title="" navigate="主页 &gt; 机构管理 &gt; 机构管理" type="call"
+	interface="false" pagesize="10" async="false" databusid="FIVE"
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.ebank.business.management.getter.branchManageDetailGetter">
+	<Include id="BankParam" />
+
+	<Fields>
+	<Field id="old_brno" desc="branchManageDetail.CommQry.Field.old_brno" status="F" primary="false"
+			edittype="" method="None" type="String" size="12" require="true"
+			readonly="true" default="false" xpath="/old_bctl/brno" tip="branchManageDetail.CommQry.Field.old_brno" rules="isBrNo"/>
+				<Field id="brno" desc="branchManageDetail.CommQry.Field.old_brno" status="F" primary="false"
+			edittype="" method="None" type="String" size="12" require="true"
+			readonly="true" default="false" xpath="/bctl/brno" tip="branchManageDetail.CommQry.Field.old_brno" rules="isBrNo"/>
+			
+			
+			<Field id="tskId" desc="BranchCheck.fieid.id" status="F" size="14"
+			require="false" readonly="false" edittype="text" datatype="string"
+			 xpath="" />
+			 
+			<Field id="approveStatusChoose" desc="Common.Message.Approve.Select" require="false"
+			edittype="select" datatype="string" method="None" readonly="false"
+			size="2" translated="DATA_DIC.1015" status="N" default="" xpath="" />
+			
+			<Field id="old_brname" desc="branchManageDetail.CommQry.Field.brname" status="F" primary="false"
+			method="None" readonly="true" type="String" size="40" default=""
+			xpath="/old_bctl/brname" require="false" tip="branchManageDetail.CommQry.Field.brname"  width="400" />
+			<Field id="brname" desc="branchManageDetail.CommQry.Field.brname" status="F" primary="false"
+			method="None" readonly="true" type="String" size="40" default=""
+			xpath="/bctl/brname" require="false" tip="branchManageDetail.CommQry.Field.brname" width="400"  />
+			
+			<Field id="old_timezone" desc="branchManage.Fields.Field.timezone" status="F" primary="false" rules="xssSave" 
+			method="None" readonly="true" type="String" size="40" default=""
+			xpath="/old_bctl/timezone" require="true" tip="branchManage.Fields.Field.timezone" />
+			
+			<Field id="timezone" desc="branchManage.Fields.Field.timezone" status="F" primary="false" rules="xssSave" 
+			method="None" readonly="true" type="String" size="40" default=""
+			xpath="/bctl/timezone" require="true" tip="branchManage.Fields.Field.timezone" />
+			
+			<Field id="old_address" desc="branchManageDetail.CommQry.Field.address" status="F" method="None" readonly="true"
+			primary="false" type="String" require="true" size="100" width="400"
+			default="false" xpath="/old_bctl/address" tip="branchManageDetail.CommQry.Field.address" />
+			
+			<Field id="address" desc="branchManageDetail.CommQry.Field.address" status="F" method="None"  readonly="true"
+			primary="false" type="String" require="true" size="100"
+			default="false" xpath="/bctl/address" tip="branchManageDetail.CommQry.Field.address" width="400" />
+			
+			<Field id="old_postno" desc="branchManageDetail.CommQry.Field.postno" status="F" method="None" rule="isNum"
+			primary="false" type="String" require="true" default="false" size="6" readonly="true"
+			xpath="/old_bctl/postno" tip="branchManageDetail.CommQry.Field.postno" />
+			<Field id="postno" desc="branchManageDetail.CommQry.Field.postno" status="F" method="None" rule="isNum"
+			primary="false" type="String" require="true" default="false" size="6" readonly="true"
+			xpath="/bctl/postno" tip="branchManageDetail.CommQry.Field.postno" />
+			
+			
+			<Field id="old_teleno" desc="branchManageDetail.CommQry.Field.teleno" status="F" method="None" size="14"
+			primary="false" type="String" require="true" default="false" readonly="true"
+			xpath="/old_bctl/teleno" tip="branchManageDetail.CommQry.Field.teleno" />
+			<Field id="teleno" desc="branchManageDetail.CommQry.Field.teleno" status="F" method="None" size="14"
+			primary="false" type="String" require="true" default="false" readonly="true"
+			xpath="/bctl/teleno" tip="branchManageDetail.CommQry.Field.teleno" />
+			
+			
+			<Field id="old_brclass" desc="branchManageDetail.CommQry.Field.brclass" status="F" edittype="select" require="true"
+			method="None" primary="false" type="String" default="false" readonly="true"
+			xpath="/old_bctl/brclass" tip="branchManageDetail.CommQry.Field.brclass" translated="DATA_DIC.401" />
+			<Field id="brclass" desc="branchManageDetail.CommQry.Field.brclass" status="F" edittype="select" require="true"
+			method="None" primary="false" type="String" default="false" readonly="true"
+			xpath="/bctl/brclass" tip="branchManageDetail.CommQry.Field.brclass" translated="DATA_DIC.401" />
+			
+			<Field id="blnUpBrcode" desc="branchManageDetail.CommQry.Field.old_blnUpBrcode" status="F" primary="false"
+			method="None" readonly="true" type="String" size="20" default=""
+			edittype="select" translated="CQ:AllBranchSelect"
+			fieldmap="blnUpBrcode=brcode;blnUpBrcodeName=brcodeTypeName"
+			viewField="brcodeTypeName" xpath="/bctl/blnUpBrcode" require="true"
+			tip="branchManageDetail.CommQry.Field.old_blnUpBrcode" />
+			<Field id="old_blnUpBrcode" desc="branchManageDetail.CommQry.Field.old_blnUpBrcode" status="F" primary="false"
+			method="None" readonly="true" type="String" size="20" default=""
+			edittype="select" translated="CQ:AllBranchSelect"
+			fieldmap="blnUpBrcode=brcode;blnUpBrcodeName=brcodeTypeName"
+			viewField="brcodeTypeName" xpath="/old_bctl/blnUpBrcode" require="true"
+			tip="branchManageDetail.CommQry.Field.old_blnUpBrcode" />
+			
+			
+			<Field id="old_blnManageBrcode" desc="branchManageDetail.CommQry.Field.blnManageBrcode" status="F"
+			primary="false" method="None" readonly="true" type="String"
+			size="20" edittype="select" translated="CQ:AllBranchSelect"
+			fieldmap="blnManageBrcode=brcode;blnManageBrcodeName=brcodeTypeName"
+			viewField="brcodeTypeName" default="" xpath="/old_bctl/blnManageBrcode"
+			require="false" tip="branchManageDetail.CommQry.Field.blnManageBrcode" />
+			<Field id="blnManageBrcode" desc="branchManageDetail.CommQry.Field.blnManageBrcode" status="F"
+			primary="false" method="None" readonly="true" type="String"
+			size="20" edittype="select" translated="CQ:AllBranchSelect"
+			fieldmap="blnManageBrcode=brcode;blnManageBrcodeName=brcodeTypeName"
+			viewField="brcodeTypeName" default="" xpath="/bctl/blnManageBrcode"
+			require="false" tip="branchManageDetail.CommQry.Field.blnManageBrcode" />
+			
+			<Field id="old_brattr" desc="branchManageDetail.CommQry.Field.brattr" status="F" primary="false"
+			edittype="select" translated="DATA_DIC.455" method="None" readonly="true"
+			type="String" size="20" require="" default="" xpath="/old_bctl/brattr"
+			tip="branchManageDetail.CommQry.Field.brattr" />
+			<Field id="brattr" desc="branchManageDetail.CommQry.Field.brattr" status="F" primary="false"
+			edittype="select" translated="DATA_DIC.455" method="None"  readonly="true"
+			type="String" size="20" require="" default="" xpath="/bctl/brattr"
+			tip="branchManageDetail.CommQry.Field.brattr" />
+			
+			<Field id="old_otherAreaFlag" desc="branchManageDetail.CommQry.Field.otherAreaFlag" status="F" method="None"
+			edittype="select" translated="DATA_DIC.457" primary="false"  readonly="true"
+			type="String" default="" xpath="/old_bctl/otherAreaFlag" tip="branchManageDetail.CommQry.Field.otherAreaFlag" />
+			<Field id="otherAreaFlag" desc="branchManageDetail.CommQry.Field.otherAreaFlag" status="F" method="None"
+			edittype="select" translated="DATA_DIC.457" primary="false"  readonly="true"
+			type="String" default="" xpath="/bctl/otherAreaFlag" tip="branchManageDetail.CommQry.Field.otherAreaFlag" />
+			
+			
+			<Field id="old_status" desc="branchManageDetail.CommQry.Field.status" status="F" edittype="select"
+			method="None" primary="false" type="String" default="" readonly="true"
+			xpath="/old_bctl/status" tip="branchManageDetail.CommQry.Field.status" translated="DATA_DIC.501" />
+
+				<Field id="status" desc="branchManageDetail.CommQry.Field.status" status="F" edittype="select"  readonly="true"
+			method="None" primary="false" type="String" default=""
+			xpath="/bctl/status" tip="branchManageDetail.CommQry.Field.status" translated="DATA_DIC.501" />
+			
+			<!--20160303-->
+			<Field id="ssfrh" desc="所属法人行" status="F" primary="false"
+			method="None" readonly="true" type="String" size="20" default=""
+			edittype="select" translated="CQ:AllFaRenBranchSelect"
+			fieldmap="ssfrh=stbrNo;ssfrhName=stbrNoTypeName"
+			viewField="stbrNoTypeName" xpath="/bctl/ssfrh" require="true"
+			tip="上级机构" />
+			
+			<Field id="old_ssfrh" desc="所属法人行" status="F" primary="false"
+			method="None" readonly="true" type="String" size="20" default=""
+			edittype="select" translated="CQ:AllFaRenBranchSelect"
+			fieldmap="ssfrh=stbrNo;ssfrhName=stbrNoTypeName"
+			viewField="stbrNoTypeName" xpath="/old_bctl/ssfrh" require="true"
+			tip="上级机构" />
+			
+			<Field id="isFp" desc="是否启用分配员" status="F" require="false" edittype="select"
+			datatype="string" method="None" readonly="true" primary="true" type="st"
+			translated="DATA_DIC.10004" size="30" default="" xpath="/bctl/isFp" tip="" />
+			
+			<Field id="old_isFp" desc="是否启用分配员" status="F" require="false" edittype="select"
+			datatype="string" method="None" readonly="true" primary="true" type="st"
+			translated="DATA_DIC.10004" size="30" default="" xpath="/old_bctl/isFp" tip="" />
+</Fields>
+<Operations>
+<Button id="btClose" name="btClose" desc="branchManageDetail.Operations.Button.btClose" operation="syncsubmit"
+			url="#" icon="icon-back" txn="" />    
+<Button id="btApprove" name="btApprove" desc="Common.Button.btApprove" operation="asysubmit" icon="icon-ok"
+                updateClass="com.huateng.report.system.updater.BranchCheckApproveUpdater"
+                url="#" txn=""/> 
+<Button id="btReject" name="btReject" desc="Common.Button.btReject" operation="asysubmit" icon="icon-no"
+				updateClass="com.huateng.report.system.updater.BranchCheckRejectUpdater"
+				url="#" txn="" />
+    </Operations>
+</CommQry>
