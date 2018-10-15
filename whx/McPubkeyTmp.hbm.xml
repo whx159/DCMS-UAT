@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="resource.bean.hf">
+	<class name="McPubkeyTmp" table="MC_PUBKEY_TMP">
+		<composite-id name="mcpubkeypk" class="McPubkeyPk">
+			<key-property name="uptlr" column="UPTLR" type="string"/>
+			<key-property name="clientid" column="CLIENTID" type="string"/>
+		</composite-id>
+	    <property column="SECRET" name="secret" type="string" />
+	    <property column="PUBKEY" name="pubkey" type="string" />
+	    <property column="KEYFILENAME" name="keyfilename" type="string" />
+	    <property column="UPTIME" name="uptime" type="string" />
+	    <property column="COUNTRY" name="country" type="string" />
+	    <property column="POSNAME" name="posname" type="string" />
+	    <property column="EXPIRYTIME" name="expirytime" type="string" />
+	    <property column="STATUS" name="status" type="string" />
+	   <property column="PROSTATUS" name="prostatus" type="string" />
+	    <property column="ACTION" name="action" type="string" />
+	    <property column="REJINFO" name="rejinfo" type="string" />
+	    <property column="MODID" name="modid" type="string" />
+	    <property column="MODTIME" name="modtime" type="string" />
+	    <property column="CHKID" name="chkid" type="string" />
+	    <property column="CHKTIME" name="chktime" type="string" />
+	    <property column="CREID" name="creid" type="string" />
+	    <property column="CRETIME" name="cretime" type="string" />
+	    <property column="CERNAME" name="cername" type="string" />
+	    <property column="RSV1" name="rsv1" type="string" />
+	    <property column="RSV2" name="rsv2" type="string" />
+	    <property column="RSV3" name="rsv3" type="string" />
+	    <property column="RSV4" name="rsv4" type="string" />
+	    <property column="RSV5" name="rsv5" type="string" />
+	    <property column="RSV6" name="rsv6" type="string" />
+	    <property column="LASTTIME" name="lasttime" type="string" />
+	    <property column="HEADERINFO" name="headerinfo" type="string" />
+	</class>
+</hibernate-mapping>
