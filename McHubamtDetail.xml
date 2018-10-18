@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommQry title="入账交易信息" type="call" interface="true" navigate=""
+	pagesize="10" async="true" databusid="" transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.hsbc.getter.McHubamtDetailGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<Field id="select" desc="McHubamtDetail.Field.select" method="None" edittype="checkbox" datatype="boolean" xpath="" />
+		
+		<Field id="traceno" desc="McHubamtDetail.Field.traceno" status="F" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/traceno" size="16"/>
+		<Field id="vdate" desc="McHubamtDetail.Field.vdate" status="F" require="true" edittype="date" rules="xssSave" datatype="string" readonly="false" xpath="/vdate" size="8"/>
+		<Field id="trntime" desc="McHubamtDetail.Field.trntime" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/trntime" size="6"/>
+		<Field id="merid" desc="McHubamtDetail.Field.merid" require="true" edittype="select" size="15"  datatype="string" status="F" translated="CQ:McMerinfoSelectAll" fieldmap="merid=merid" viewField="meridAndName" editable="false" xpath="/merid"/>
+		<Field id="payerbank" desc="McHubamtDetail.Field.payerbank"  status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/payerbank" size="72"/>	 
+		<Field id="payeracct" desc="McHubamtDetail.Field.payeracct"  status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/payeracct" size="32"/>	 
+		<Field id="payername" desc="McHubamtDetail.Field.payername"  status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/payername" size="120"/>	 
+		<Field id="payeeacct" desc="McHubamtDetail.Field.payeeacct"  status="F" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/payeeacct" size="32"/>	 
+		<Field id="payeename" desc="McHubamtDetail.Field.payeename"  status="F" require="true" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/payeename" size="120"/>	 
+		<Field id="curcd" desc="McHubamtDetail.Field.curcd"  status="F"  require="true" edittype="select" rules="xssSave" datatype="string" readonly="false" xpath="/curcd" size="3" primary="true" type="String" translated="CQ:MoneyKindSelect" fieldmap="curcd=dataNo" viewField="dataName" editable="false" />	 
+		<Field id="amt" desc="McHubamtDetail.Field.amt"  status="F" require="true" edittype="text" rules="xssSave" datatype="currency" scale="2" readonly="false" xpath="/amtDesc" size="16"/>	 
+		<Field id="orgrefid" desc="McHubamtDetail.Field.orgrefid"  status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/orgrefid" size="20"/>	 
+		<Field id="nar1" desc="McHubamtDetail.Field.nar1"  status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/nar1" size="72"/>	 
+		<Field id="nar2" desc="McHubamtDetail.Field.nar2"  status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/nar2" size="72"/>	 
+		<Field id="nar3" desc="McHubamtDetail.Field.nar3"  status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/nar3" size="72"/>	 
+		<Field id="nar4" desc="McHubamtDetail.Field.nar4"  status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/nar4" size="72"/>	 
+		<Field id="rsv1" desc="McHubamtDetail.Field.rsv1"  status="F" require="false" edittype="select" rules="xssSave" datatype="string" readonly="false" xpath="/rsv1" size="20"/>	 
+		<Field id="rsv2" desc="McHubamtDetail.Field.rsv2"  status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv2" size="35"/>	 
+		<Field id="rsv3" desc="McHubamtDetail.Field.rsv3"  status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv3" size="60"/>	 
+		<Field id="chkstatus" desc="McHubamtDetail.Field.chkstatus"  status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/chkstatus" size="2"/>	 
+		<Field id="corersv" desc="McHubamtDetail.Field.corersv"  status="F"  require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/corersv" size="100"/>	 
+		<Field id="localrsv" desc="McHubamtDetail.Field.localrsv"  status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/localrsv" size="100"/>	 
+		<Field id="credate" desc="McHubamtDetail.Field.credate"   status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="30"  default="" xpath="/credate"   />
+			
+		<Field id="status"  	 desc="Common.Field.status"  status="F" edittype="select" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="2"   default="" xpath="/status"  translated="DATA_DIC.1000" />
+		<Field id="action"  	 desc="Common.Field.action"  status="F" edittype="select" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="2"   default="" xpath="/action"  translated="DATA_DIC.1026" />
+		<Field id="prostatus"  	 desc="Common.Field.prostatus"  status="F" edittype="select" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="1"   default="" xpath="/prostatus"  translated="DATA_DIC.501" />
+		<Field id="creid"   	 desc="Common.Field.creid"   status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="20"  default="" xpath="/creid"   />
+		<Field id="cretime" 	 desc="Common.Field.cretime" status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="19"  default="" xpath="/cretime" />
+		<Field id="modid"   	 desc="Common.Field.modid"   status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="20"  default="" xpath="/modid"   />
+		<Field id="modtime" 	 desc="Common.Field.modtime" status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="19"  default="" xpath="/modtime" />
+		<Field id="chkid"   	 desc="Common.Field.chkid"   status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="20"  default="" xpath="/chkid"   />
+		<Field id="chktime" 	 desc="Common.Field.chktime" status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="19"  default="" xpath="/chktime" />
+	</Fields>
+	<Where>
+	</Where>
+	<Operations>
+		<Button id="btSave" name="btSave" desc="Common.Button.btSave" operation="asysubmit"
+			    updateClass="com.huateng.hsbc.update.McHubamtUpdate"
+			    url="#" txn="" />
+		<Button id="btBack" name="btBack" desc="Common.Button.btBack" operation="" url="#" />
+		<Button id="btOneApprove" desc="Common.Button.btApprove" operation="asysubmit" icon="icon-ok"
+			url="#" updateClass="com.huateng.hsbc.update.McHubamtOneCheckUpdate" />
+		<Button id="btOneReject" desc="Common.Button.btReject" operation="asysubmit" icon="icon-no"
+			url="#" updateClass="com.huateng.hsbc.update.McHubamtOneCheckUpdate" />
+	</Operations>
+</CommQry>
