@@ -1,0 +1,2 @@
+alter table MC_TXN add PMTCHAN_RET VARCHAR2(3);
+alter table MC_TXN add PAYMENTDATETIME VARCHAR2(14);

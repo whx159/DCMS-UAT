@@ -4,8 +4,14 @@
     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
 <hibernate-mapping package="resource.bean.hf">
 	<class name="McTxn" table="MC_TXN">
-		<id column="ORDERNO" name="orderno" type="string" />
-		<property column="MERID"      name="merid"      type="string" />
+		<composite-id name="key" class="McTxnKey">
+			<key-property name="merid" column="MERID" type="string"/>
+			<key-property name="orderno" column="ORDERNO" type="string"/>
+		</composite-id>
+		
+		<!-- <id column="ORDERNO" name="orderno" type="string" />
+		<property column="MERID"      name="merid"      type="string" /> -->
+		
 		<property column="MERNM"      name="mernm"      type="string" />
 		<property column="COUNTRY"    name="country"    type="string" />
 		<property column="ORGID"      name="orgid"      type="string" />
