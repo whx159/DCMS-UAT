@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="resource.bean.hf">
+	<class name="McTxnId" table="MC_TXN_ID">
+		<composite-id name="key" class="McTxnKey">
+			<key-property name="merid" column="MERID" type="string"/>
+			<key-property name="orderno" column="ORDERNO" type="string"/>
+		</composite-id>
+
+		<property column="PMTCHAN"    name="pmtchan"    type="string" />
+		<property column="MERNM"      name="mernm"      type="string" />
+		<property column="COUNTRY"    name="country"    type="string" />
+		<property column="ORGID"      name="orgid"      type="string" />
+		<property column="PAYTYPE"    name="paytype"    type="string" />
+		<property column="TXNDATE"    name="txndate"    type="string" />
+		<property column="REFID"      name="refid"      type="string" /> 
+		<property column="CUSTNM"     name="custnm"     type="string" />
+		<property column="CARDNO"     name="cardno"     type="string" />
+		<property column="TXNCRY"     name="txncry"     type="string" />
+		<property column="TXNAMT"     name="txnamt"     type="big_decimal" />
+		<property column="AGTFEE"     name="agtfee"     type="big_decimal" />
+		<property column="HSBCFEE"    name="hsbcfee"    type="big_decimal" />
+		<property column="SETTDATE"    name="settdate"    type="string" />		
+		<property column="STATUS"  	  name="status"  	type="string" />		
+		<property column="BATCHID"  	  name="batchid"  	type="string" />		
+		<property column="CHKSTATUS"  	  name="chkstatus"  	type="string" />
+		<property column="CHKHUBSTATUS"  	  name="chkhubstatus"  	type="string" />
+		<property column="REVTIME"    name="revtime"     type="string" />
+		<property column="RESULTMSG"    name="resultmsg"     type="string" />
+		
+		<property column="MCN"       name="mcn"        type="string" />
+		<property column="CHNAME"    name="chname"     type="string" />
+		
+		<property column="BILLINGNO"    name="billingno"     type="string" />
+		
+		<property column="RSV1"    name="rsv1"     type="string" />
+		<property column="RSV2"    name="rsv2"     type="string" />
+		<property column="RSV3"    name="rsv3"     type="string" />
+		<property column="PAYMENTDATETIME"     name="paymentdatetime"   type="string" />
+	</class>
+</hibernate-mapping>
