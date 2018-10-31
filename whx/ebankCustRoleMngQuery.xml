@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CommQry
+title="企业角色维护" 
+navigate="主页 &gt; 权限管理 &gt; 角色管理"
+type="call"
+interface="true"
+pagesize="50"
+async="true"
+databusid=""
+transdataactionurl="/trans/TransDataAction.do"
+getterclassname="com.huateng.ebank.business.management.getter.EbankCustRoleMngQueryGetter">
+	<Include id="BankParam" />
+	<ResultViewParam>
+		/fpages/management/ftl/ebankCustRoleMng.ftl
+	</ResultViewParam>
+	<Fields>
+		<!-- 角色信息-->
+		<Field id="id" desc="ID" status="F" require="" edittype="text"
+			datatype="string" method="None" readonly="" primary="true" type="角色编号"
+			size="32" default="" xpath="/id" tip="ID" />
+		<Field id="roleName" desc="ebankCustRoleMng.Field.roleName" status="F" require="true" edittype="text"
+			datatype="string" method="None" readonly="" primary="true" type="ebankCustRoleMng.Field.roleName"
+			size="50" default="" xpath="/roleName" tip="ebankCustRoleMng.Field.roleName"/>
+			
+		<Field id="status" desc="Common.Field.status" status="F" edittype="select"
+			method="None" primary="false" type="String" default=""
+			xpath="/status" tip="Common.Field.status" translated="DATA_DIC.1000" />
+	
+		<Field id="opr" desc="Common.Field.action" require="false" edittype="text"
+			datatype="string" method="None" readonly="true" primary="true" type="ebankCustRoleMng.Field.opr"
+			size="12" default="" xpath="" tip="Common.Field.action" />		
+		
+        <Field id="mail" desc="ebankCustRoleMng.Field.mail" require="false" edittype="text"
+            datatype="string" method="None" readonly="true" primary="true" 
+            size="1" default="" xpath="/mail"  />
+		
+		<Field id="action"  	 desc="Common.Field.action"  status="F" edittype="select" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="2"   default="" xpath="/action"  translated="DATA_DIC.1026" />
+		<Field id="prostatus"  	   desc="Common.Field.prostatus"      status="F" edittype="select" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="1"   default="" xpath="/prostatus"  translated="DATA_DIC.501" />
+		<Field id="creid"   	 desc="Common.Field.creid"   status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="20"  default="" xpath="/creid"   />
+		<Field id="cretime" 	 desc="Common.Field.cretime" status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="19"  default="" xpath="/cretime" />
+		<Field id="modid"   	 desc="Common.Field.modid"   status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="20"  default="" xpath="/modid"   />
+		<Field id="modtime" 	 desc="Common.Field.modtime" status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="19"  default="" xpath="/modtime" />
+		<Field id="chkid"   	 desc="Common.Field.chkid"   status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="20"  default="" xpath="/chkid"   />
+		<Field id="chktime" 	 desc="Common.Field.chktime" status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="19"  default="" xpath="/chktime" />
+	</Fields>
+	<Where>
+	   	<TextBox id="qroleName"
+                 type="String" dataType="" operation="EQ" size="50" desc="ebankCustRoleMng.Where.qroleName"
+                 tip="ebankCustRoleMng.Where.qroleName" method="genLikeP" index="0" function="" width=""
+                 default="" scale="" require="" readOnly="" />
+	</Where>
+	<Operations>
+
+	    <Button id="btRoleAuthorityManagement" name="btRoleAuthorityManagement" desc="设置角色功能" operation="syncsubmit"
+			url="/fpages/management/ftl/RoleFuncMng.ftl" txn="" />
+
+		<Button id="btSelectRole" name="btSelectRole" desc="查询人员信息" operation="syncsubmit"
+			url="/fpages/management/ftl/ebankCustRoleMngUser.ftl" txn="" />
+
+		<Button id="btAddRole" name="btAddRole" desc="Common.Button.btAdd" operation="href"
+			url="/fpages/management/ftl/RoleFuncMng.ftl" txn="" icon="icon-add"/>
+
+		<Button id="btDeleteRole" name="btDeleteRole" desc="删除角色" operation="delrecord"
+			url="#" txn="" />
+		<Button id="btSave" name="btSave" desc="保存" operation="asysubmit"
+			updateClass="com.huateng.ebank.business.management.updater.CustRoleSaveUpdater"
+            url="#" txn="" />
+        <!-- add by zhaozhiguo 2012/2/15 begin FPP-9 用户,角色及机构的管理页面优化调整 -->
+		<Button id="btStatus" name="btUnlockRole" desc="Common.Button.Enable.Disable" operation="asysubmit"
+			updateClass="com.huateng.ebank.business.rolemng.update.RoleStatusChgUpdate"
+			url="#" txn="" icon="icon-set"/>
+		<!-- add by zhaozhiguo 2012/2/15 end FPP-9 用户,角色及机构的管理页面优化调整 -->
+		<!-- add by zhiyang.he 双岗复核改造 2012-09-03 begin -->
+		<Button id="btQuery" name="btQuery" desc="查看对比信息" operation="syncsubmit"
+			url="" txn="" />
+		<Button id="btSee" name="btSee" desc="查看信息" operation="syncsubmit"
+			url="" txn="" />
+		<!-- add by zhiyang.he 双岗复核改造 2012-09-03 end -->
+		
+		<Button id="btCancelRecord" name="btCancelRecord" desc="Common.Button.btCancel" operation="asysubmit" 
+		updateClass="com.huateng.ebank.business.rolemng.update.RoleCancelUpdate" url="#" show="" group="" txn="" icon="icon-cancel" />
+	</Operations>
+</CommQry>

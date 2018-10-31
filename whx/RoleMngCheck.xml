@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 用于直接生成SQL语句，支持同步和异步提交 -->
+<!-- title:标题 navigate:导航信息 type:方式（sql|call) interface:是否显示输入条件页面(true|false)
+	databusid:数据总线编号 transdataactionurl:数据整理URL txnlogflag:true记录日志 async:异步提交标志
+	pagesize:页面显示记录数(缺省为10) -->
+<CommQry title="UndoConfirm.title" navigate="系统维护 &gt; 主管确认 &gt; 待办事项"
+         type="call" interface="true" pagesize="10" async="true" databusid=""
+         transdataactionurl="/trans/TransDataAction.do" txnlogflag="true"
+         getterclassname="com.huateng.ebank.business.rolemng.getter.RoleMngCheckGetter">
+    <Include id="BankParam"/>
+    <!-- <PageQryExp type="CSV" limit="true" encoding="UTF-8" url="/trans/qryExp.do"
+        directory="F:/upload"/> -->
+    <!--<PageQryExp type="XLS" limit="true" encoding="UTF-8"
+                url="/trans/qryExp.do" desc="批量下载-待办事项"/>-->
+    <Fields>
+        <!-- status :F-基本信息中显示 N-不显示 D-详细信息中显示 A-基本、详细信息中都显示 -->
+        <Field id="select" desc="RoleMngCheck.Field.select" require="false" method="None"
+               readonly="false" size="20" default="" xpath="" type="select"
+               edittype="checkbox"/>
+        <Field id="id" desc="RoleMngCheck.Field.id" status="F" size="14"
+               require="false" readonly="false" edittype="text" datatype="string"
+               tip="RoleMngCheck.Field.id" xpath="/id"/>
+        <Field id="rolename" desc="RoleMngCheck.Field.rolename" status="F" size="14"
+               method="com.huateng.ebank.business.common.CQMethod.getRoleName"
+               require="false" readonly="false" edittype="text" datatype="string"
+               tip="RoleMngCheck.Field.rolename" xpath="/adtRcdPk"/>
+        <Field id="intOperId" desc="RoleMngCheck.Field.intOperId" status="F"
+               size="50" require="false" readonly="false" edittype="text" datatype="string"
+               tip="RoleMngCheck.Field.intOperId" xpath="/intOperId"/>
+        <Field id="insCd" desc="RoleMngCheck.Field.insCd" status="F" method=""
+               size="20" require="false" readonly="false" edittype="text" datatype="string"
+               tip="RoleMngCheck.Field.insCd" xpath="/insCd"/>
+        <Field id="adtRcdPk" desc="原纪录主键" status="F"
+               size="32" require="false" readonly="false" edittype="text" datatype="string"
+               tip="原纪录主键" xpath="/adtRcdPk"/>
+        <Field id="updTransCd" desc="RoleMngCheck.Field.updTransCd"
+               status="F" size="2" require="false" readonly="false" edittype="select"
+               datatype="string" tip="RoleMngCheck.Field.updTransCd" xpath="/updTransCd"
+               translated="DATA_DIC.1026"/>
+        <Field id="crtDt" desc="RoleMngCheck.Field.crtDt" status="F"
+               size="8" require="false" readonly="false" edittype="text" datatype="date"
+               tip="RoleMngCheck.Field.crtDt" xpath="/crtDt"/>
+        <!-- 修改创建时间 ma 
+        <Field id="crtDtShow"  method="com.huateng.ebank.business.common.CQMethod.getDateUTC" desc="RoleMngCheck.Field.crtDt" status="F"
+               size="8"  require="false" readonly="false" edittype="text" datatype="date"
+               tip="RoleMngCheck.Field.crtDt" xpath="/crtDt"/>    -->     
+               
+        <Field id="lastUpdOper" desc="最后更新人"
+               status="F" size="20" require="false" readonly="false" edittype="text"
+               datatype="string" tip="最后更新人" xpath="/lastUpdOper"/>
+        <Field id="lastUpdTms" desc="最后更新时间"
+               status="F" size="14" require="false" readonly="false" edittype="text"
+               datatype="string" tip="最后更新时间" xpath="/lastUpdTms"/>
+        <Field id="oldSt" desc="原纪录状态" status="F"
+               size="1" require="false" readonly="false" edittype="text" datatype="string"
+               tip="原纪录状态" xpath="/oldSt"/>
+        <Field id="adtRcdPk" desc="参数主键" status="F"
+               size="12" require="false" readonly="false" edittype="text" datatype="string"
+               tip="参数主键" xpath="/adtRcdPk"/>
+		
+		<Field id="cretimeShow" method="com.huateng.ebank.business.common.CQMethod.getDateUTC" desc="Common.Field.cretime" status="F" edittype="text"  datatype="string" readonly="true" primary="true" type="String" size="14"  default="" xpath="/cretime"/>
+		<Field id="modtimeShow" method="com.huateng.ebank.business.common.CQMethod.getDateUTC" desc="Common.Field.modtime" status="F" edittype="text"  datatype="string" readonly="true" primary="true" type="String" size="14"  default="" xpath="/modtime"/>
+		<Field id="chktimeShow" method="com.huateng.ebank.business.common.CQMethod.getDateUTC" desc="Common.Field.chktime" status="F" edittype="text"  datatype="string" readonly="true" primary="true" type="String" size="14"  default="" xpath="/chktime"/>
+		<Field id="creid"   desc="Common.Field.creid"   status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" require="false" primary="true" type="String" size="20"  default="" xpath="/creid"  />
+    	<Field id="modid"   desc="Common.Field.modid"   status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" require="false" primary="true" type="String" size="20"  default="" xpath="/modid"  />
+    	<Field id="chkid"   desc="Common.Field.chkid"   status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" require="false" primary="true" type="String" size="20"  default="" xpath="/chkid"  />
+    </Fields>
+    <Where>
+
+        <TextBox id="rolename" dataType="String" size="50" desc="RoleMngCheck.Where.rolename"
+                 tip="RoleMngCheck.Where.rolename" index="0" default="" scale="" require="" readOnly=""
+                 />
+
+        <Option id="updTransCd" dataType="String" size="" desc="RoleMngCheck.Where.updTransCd"
+                tip="RoleMngCheck.Where.updTransCd" index="3" default="" scale="" require="" readOnly=""
+                rules="" errmsg="" translated="DATA_DIC.1026"/>
+    </Where>
+    <Operations>
+        <Button id="btBatchApprove" desc="RoleMngCheck.Operations.btBatchApprove" operation="asysubmit"
+                url="#"  icon="icon-ok"
+                updateClass="com.huateng.report.system.updater.RoleCheckApproveBatchUpdater"
+                txn=""/>
+        <Button id="btBatchReject" desc="RoleMngCheck.Operations.btBatchReject" operation="asysubmit"
+                url="#" icon="icon-no"
+                updateClass="com.huateng.report.system.updater.RoleCheckRejectBatchUpdater"
+                txn=""/>
+        <Button id="btCancel" name="btCancel" desc="返回" operation="submitform"
+                url="#" txn=""/>
+    </Operations>
+
+
+</CommQry>
