@@ -178,6 +178,12 @@ tr {
 		function uploadFile1() {
 			var flag = true;
 			var form = document.forms[0];
+			//textarea换行
+			var headerInfo = form.headerInfo.value;
+			var reg = new RegExp("\n", "g");
+			headerInfo = headerInfo.replace(reg,'<br/>');
+			form.headerInfo.value = headerInfo;
+			alert(form.headerInfo.value);
 			if (form.clientid.value == "") {
 				alert("<%=MessageResourceUtil.getMessage("UploadCertificate.CLIENTID.NULL")%>");
 				return false;
@@ -251,6 +257,12 @@ window.onbeforeunload = function(){
 		String cername = request.getParameter("cername");
 		String posname = request.getParameter("posname");
 		String headerinfo = request.getParameter("headerinfo");
+		try{
+			headerinfo = java.net.URLDecoder.decode(headerinfo,"UTF-8");
+			headerinfo = headerinfo.replace("<br/>", "\n");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		String time = request.getParameter("time");
 		//对传过来的毫秒时间进行格式化
 		Date date = new Date(Long.valueOf(time));
@@ -293,7 +305,7 @@ window.onbeforeunload = function(){
 			<tr id="headinfo">
 				<td class="labeltd" align="right">Header Info:</td>
 				<td align="left" class="datatd" colspan="3">
-					<textarea type="text" required="true" wrap="hard" name="headerInfo"  maxlength="2048" style="width: 100%;border: 1px solid #E5E5E5; height: 51px" class="mytxt" ><%=headerinfo %></textarea>
+					<textarea type="text" required="true" wrap="hard" name="headerInfo"  maxlength="2048" style="width: 100%;border: 1px solid #E5E5E5;resize:none; height: 51px" class="mytxt" ><%=headerinfo %></textarea>
 				</td>
 			</tr>
 			<tr id="pos">

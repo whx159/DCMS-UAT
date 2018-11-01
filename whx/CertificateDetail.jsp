@@ -248,6 +248,14 @@ function rejectCer(){
 		String cername = request.getParameter("cername");
 		String posname = request.getParameter("posname");
 		String headerinfo = request.getParameter("headerinfo");
+		//headerinfo = decodeURIComponent(headerinfo);
+		try{
+			headerinfo = java.net.URLDecoder.decode(headerinfo,"UTF-8");
+			headerinfo = headerinfo.replace("<br/>", "\n");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		System.out.println(headerinfo+"222");
 		String time = request.getParameter("time");
 		//String approveflag = request.getParameter("approveflag");
 		//对传过来的毫秒时间进行格式化
@@ -289,7 +297,7 @@ function rejectCer(){
 			<tr id="headinfo">
 				<td class="labeltd" align="right">Header Info:</td>
 				<td align="left" class="datatd" colspan="3">
-					<textarea type="text" required="true" name="headerInfo" wrap="hard" maxlength="2048" style="width: 100%;border: 1px solid #E5E5E5; height: 51px" class="mytxt" ><%=headerinfo %></textarea>
+					<textarea type="text" required="true" name="headerInfo" wrap="hard" maxlength="2048" style="width: 100%;border: 1px solid #E5E5E5;resize:none; height: 51px" class="mytxt" ><%=headerinfo %></textarea>
 				</td>
 			</tr>
 			<tr id="pos">

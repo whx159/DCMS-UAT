@@ -284,11 +284,23 @@ function rejectCer(){
 		String cername = request.getParameter("cername");
 		String posname = request.getParameter("posname");
 		String headerinfo = request.getParameter("headerinfo");
+		try{
+			headerinfo = java.net.URLDecoder.decode(headerinfo,"UTF-8");
+			headerinfo = headerinfo.replace("<br/>", "\n");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		String time = request.getParameter("time");
 		
 		String bcername = request.getParameter("bcername");
 		String bposname = request.getParameter("bposname");
 		String bheaderinfo = request.getParameter("bheaderinfo");
+		try{
+			bheaderinfo = java.net.URLDecoder.decode(bheaderinfo,"UTF-8");
+			bheaderinfo = bheaderinfo.replace("<br/>", "\n");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 		String btime = request.getParameter("btime");
 		//对传过来的毫秒时间进行格式化
 		Date date = new Date(Long.valueOf(time));
@@ -341,7 +353,7 @@ function rejectCer(){
 			<tr id="headinfo1">
 				<td class="labeltd" align="right">Header Info:</td>
 				<td align="left" class="datatd" colspan="3">
-					<textarea type="text" required="true" name="headerInfo" id="headerInfo"  maxlength="2048" style="width: 100%;border: 1px solid #E5E5E5; height: 51px" class="mytxt" ><%=headerinfo %></textarea>
+					<textarea type="text" required="true" name="headerInfo" id="headerInfo"  maxlength="2048" style="width: 100%;border: 1px solid #E5E5E5;resize:none; height: 51px" class="mytxt" ><%=headerinfo %></textarea>
 				</td>
 			</tr>
 			<tr id="pos">
@@ -396,7 +408,7 @@ function rejectCer(){
 				<tr  id="headinfo2">
 					<td class="labeltd" align="right">Header Info:</td>
 					<td align="left" class="datatd" colspan="3">
-						<textarea type="text" required="true" name="headerInfo2" id="headerInfo2"  maxlength="2048" style="width: 100%;border: 1px solid #E5E5E5; height: 51px" class="mytxt" ><%=bheaderinfo %></textarea>
+						<textarea type="text" required="true" name="headerInfo2" id="headerInfo2"  maxlength="2048" style="width: 100%;border: 1px solid #E5E5E5;resize:none; height: 51px" class="mytxt" ><%=bheaderinfo %></textarea>
 					</td>
 				</tr>
 				<tr id="pos2">

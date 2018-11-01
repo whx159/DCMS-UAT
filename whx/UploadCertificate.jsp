@@ -151,6 +151,11 @@ tr {
 		function uploadFile1() {
 			var flag = true;
 			var form = document.forms[0];
+			//textarea换行
+			var headerInfo = form.headerInfo.value;
+			var reg = new RegExp("\n", "g");
+			headerInfo = headerInfo.replace(reg,'<br/>');
+			form.headerInfo.value = headerInfo;
 			if (form.clientid.value == "") {
 				alert("<%=MessageResourceUtil.getMessage("UploadCertificate.CLIENTID.NULL")%>");
 				return false;
@@ -199,7 +204,6 @@ tr {
 				alert("Only support *.cer");
 				return false;
 			}
-			
 			if (confirm('<%=MessageResourceUtil.getMessage("UploadCertificate.Import.NULL")%>')) {
 //				document.getElementById("inputform1").submit();
 				document.inputform1.submit();
@@ -262,7 +266,7 @@ function doChange(file){
 			<tr id="headinfo">
 				<td class="labeltd" align="right">Header Info:</td>
 				<td align="left" class="datatd" colspan="3">
-					<textarea  required="true" wrap="hard" name="headerInfo" maxlength="2048" style="width: 100%;border: 1px solid #E5E5E5; height: 51px" class="mytxt" ></textarea>
+					<textarea  required="true" wrap="hard" name="headerInfo" maxlength="2048" style="width: 100%; resize:none;border: 1px solid #E5E5E5; height: 51px" class="mytxt" ></textarea>
 				</td>
 			</tr>
 			<tr id="pos">
