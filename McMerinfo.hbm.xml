@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="resource.bean.hf">
+	<class name="McMerinfo" table="MC_MERINFO" dynamic-insert="true" dynamic-update="true">
+		<id name="id" column="ID" type="string" />
+		<property column="MERID"        name="merid"        type="string"/>
+		<property column="CUSTID"       name="custid"       type="string"/>
+		<property column="MERTYPE"      name="mertype"      type="string"/>
+		<property column="SUPMERID"     name="supmerid"     type="string"/>
+		<property column="COUNTRY"      name="country"      type="string"/>
+		<property column="CHLPRY"       name="chlpry"       type="string"/>
+		<property column="MERINSTRY"    name="merinstry"    type="string"/>
+		<property column="MERADDR"      name="meraddr"      type="string"/>
+		<property column="MERNAME"      name="mername"      type="string"/>
+		<property column="MEREMAIL"     name="meremail"     type="string"/>
+		<property column="MERACCT"      name="meracct"      type="string"/>
+		<property column="MERFEEACCT"   name="merfeeacct"   type="string"/>
+		<property column="MERURL"       name="merurl"       type="string"/>
+		<property column="MERFEETYPE"   name="merfeetype"   type="string"/>
+		<property column="MERFEECYCLE"  name="merfeecycle"  type="string"/>
+		<property column="MERFEEDATE"   name="merfeedate"   type="string"/>
+		<property column="CHLFEETYPE"   name="chlfeetype"   type="string"/>
+		<property column="CHLFEECYCLE"  name="chlfeecycle"  type="string"/>
+		<property column="CHLFEEDATE"   name="chlfeedate"   type="string"/>
+		<property column="CUSTSVREMAIL" name="custsvremail" type="string"/>
+		<property column="CUSTMAIL"     name="custmail"     type="string"/>
+		<property column="DTLTYPE"      name="dtltype"      type="string"/>
+		<property column="DTLTIME"      name="dtltime"      type="string"/>
+		<property column="RPTYPE"      name="rptype"      type="string"/>
+		<property column="RPFMT"        name="rpfmt"        type="string"/>
+		<property column="STATUS"     name="status"     type="string"/>
+		<property column="ACTION"  name="action"  type="string" />
+		<property column="PROSTATUS"  name="prostatus"  type="string" />
+		<property column="CREID"        name="creid"        type="string"/>
+		<property column="CRETIME"      name="cretime"      type="string"/>
+		<property column="MODID"        name="modid"        type="string"/>
+		<property column="MODTIME"      name="modtime"      type="string"/>
+		<property column="CHKID"        name="chkid"        type="string"/>
+		<property column="CHKTIME"      name="chktime"      type="string"/>
+		<property column="REJINFO"      name="rejinfo"      type="string"/>
+		<property column="NEXTDATE"     name="nextdate"     type="string"/>
+		<property column="REMARK"       name="remark"       type="string"/>
+		<property column="ACCTCUR"           name="acctcur"          type="string"/>
+		<property column="AGGREGATOR"        name="aggregator"       type="string"/>
+		<property column="DELIVERYCH"        name="deliverych"       type="string"/>
+		<property column="CONTACTNAME"       name="contactname"      type="string"/>
+		<property column="CONTACTINFO"       name="contactinfo"      type="string"/>
+		<property column="PROXYTYPE"         name="proxytype"        type="string"/>
+		<property column="PROXYID"           name="proxyid"          type="string"/>
+		<property column="CHANNEL"           name="channel"          type="string"/>
+		<property column="COMMERCEID"        name="commerceid"       type="string"/>
+		<property column="POSID"             name="posid"            type="string"/>
+		<property column="POSNAME"           name="posname"          type="string"/>
+		<property column="PAYMEID"           name="paymeid"          type="string"/>
+		<property column="BILLPID"           name="billpid"          type="string"/>
+		<property column="BILLPMODE"         name="billpmode"        type="string"/>
+		<property column="BILLPPROXYTYPE"    name="billpproxytype"   type="string"/>
+		<property column="BILLPPROXYID"      name="billpproxyid"     type="string"/>
+		<property column="RSV1"         name="rsv1"         type="string"/>
+		<property column="RSV2"         name="rsv2"         type="string"/>
+		<property column="RSV3"         name="rsv3"         type="string"/>
+		<property column="RSV4"         name="rsv4"         type="string"/>
+		<property column="RSV5"         name="rsv5"         type="string"/>
+		<property column="RSV6"         name="rsv6"         type="string"/>
+		<property column="HSBCNETID"         name="hsbcnetid"         type="string"/>
+		<property column="CONNECTID"         name="connectid"         type="string"/>
+		<property column="CREDATE"           name="credate"           type="string"/>
+		<property column="CLIENTID"           name="clientid"           type="string"/>
+		
+		<property column="DEBTORNAME"           name="debtorname"           type="string"/>
+		<property column="PERMNETID"           name="permnetid"           type="string"/>
+		
+		<property column="LASTTIME"  name="lasttime"   type="string"/>
+		
+		<property column="REGINCR"  name="regincr"   type="string"/>
+		<property column="APPLYSTATUS"  name="applystatus"   type="string"/>		
+		<property column="BILLPACCT"  name="billpacct"   type="string"/>
+		<property column="CERBINDSTATUS"  name="cerbindstatus"   type="string"/>
+		<property column="SHAREDKEY"  name="sharedkey"   type="string"/>
+		<property column="BINDMODID"  name="bindmodid"   type="string"/>
+		<property column="REMARKS"  name="remarks"   type="string"/>
+	</class>
+</hibernate-mapping>
+    
