@@ -66,12 +66,10 @@
 	<script language="javascript">
 	var op = "${v_op}";
 	function initCallGetter_post(){
-	/*
 		if(op=="MOD"){
 			McHubamtDetail_dataset.setFieldReadOnly("traceno", true);
-			McHubamtDetail_dataset.setFieldReadOnly("vdate", true);
+			McHubamtDetail_dataset.setFieldReadOnly("vdate", false);
 		}
-	*/	
 		if(op=="detail" || op=="seedetail"){
 			McHubamtDetail_dataset.setReadOnly(true);
 		}
@@ -111,22 +109,17 @@
 	function btSave_onClickCheck(button){
 		McHubamtDetail_dataset.setParameter("op",op);
 	    var result=0;
-	    var flag = 0;
 		if(op=="ADD"){
 		  	var traceno=McHubamtDetail_dataset.getValue("traceno");
 		    dwr.engine.setAsync(false);
 			CheckAction.checkTraceno(traceno,function(mgs){
 				if(mgs != 0){
 					alert("Hub Ref No already exists");
-				}else{
-					flag = 1;
+					return false;
 				}
 			});
-			dwr.engine.setAsync(true);
+			dwr.engine.setAsync(false);
 			//McHubamtDetail_dataset.setValue("traceno",result);
-		}
-		if(flag == 0){
-			return false;
 		}
 	}
 	
