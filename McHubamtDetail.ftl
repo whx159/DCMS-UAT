@@ -115,8 +115,9 @@
 		if(op=="ADD"){
 		  	var traceno=McHubamtDetail_dataset.getValue("traceno");
 		    dwr.engine.setAsync(false);
-			CheckAction.checkTraceno(function(mgs){
-				if(mgs == 0){
+			CheckAction.checkTraceno(traceno,function(mgs){
+			alert(mgs);
+				if(mgs != 0){
 					alert("Hub Ref No already exists");
 				}else{
 					flag = 1;
