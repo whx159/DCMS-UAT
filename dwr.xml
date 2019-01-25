@@ -103,6 +103,7 @@
 		<create creator="new" javascript="generateQrCodeAction">
             <param name="class" value="com.huateng.hsbc.dwr.GenerateQrCodeAction"/>
             <include method="generate"/>
+            <include method="checkMerID"/>
         </create>  
 	
         <!-- 图形绘制 -->
