@@ -8,7 +8,7 @@
 		<Field id="qmerid"      	 desc="StaticQrCode.Where.qmerid"	 status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="30" default="" xpath="" require="true"/>
 		<Field id="qtransedit" desc="StaticQrCode.Where.qtransedit" rules="xssSave"  status="F" translated="DATA_DIC.2012" type="String" size="2" readonly="false" default="" edittype="radio" require="true" datatype="string" xpath="" />
 		<Field id="qdate" desc="StaticQrCode.Where.qdate" rules="xssSave" edittype="text" status="F" datatype="date" size="18" type="String" readonly="false" default="" require="false" xpath="" />
-		<Field id="qamt" desc="StaticQrCode.Where.qamt" rules="xssSave" edittype="text" status="F" datatype="int" type="String" size="30" default="" readonly="false" require="true"  xpath=""/>
+		<Field id="qamt" desc="StaticQrCode.Where.qamt" rules="xssSave" edittype="text" status="F" datatype="double" type="String" size="30" default="" readonly="false" require="true"  xpath=""/>
 		<Field id="qtransno" desc="StaticQrCode.Where.qtransno" rules="xssSave" edittype="text" status="F" colspan="2"  datatype="string" type="String" size="30" default="" require="false"  xpath=""/>
 		<Field id="blank" desc=""  edittype="text" status="F" colspan="2"  datatype="string"  />
 	</Fields>

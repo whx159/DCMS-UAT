@@ -42,7 +42,8 @@
 </@CommonQueryMacro.CommonQuery>
 <script language="javascript">
 
-	
+	var _MerName_proxyUEN;
+	var _transno = "";
     function initCallGetter_post(){
     	$("#editor_blank").remove();
     	staticQrCode_dataset.setValue("qtransedit","Y");
@@ -77,7 +78,12 @@
 		   u8arr[n] = bstr.charCodeAt(n)
 		  }
 		  var blob = new Blob([u8arr])
-		  var fileName = new Date().Format("yyyyMMddhhmmss");
+		  var fileName;
+		  if(_transno == ""){
+		      fileName = _MerName_proxyUEN;
+		  }else{
+		      fileName = _MerName_proxyUEN + "-" + _transno;
+		  }
 		  window.navigator.msSaveOrOpenBlob(blob, fileName + '.' + 'png')
 		}
     }
@@ -85,6 +91,7 @@
     	var merid = staticQrCode_dataset.getValue("qmerid");
     	var expirydate = staticQrCode_dataset.getValue("qdate");
     	var transno = staticQrCode_dataset.getValue("qtransno");
+    	_transno = transno;
     	var amt = staticQrCode_dataset.getValue("qamt");
     	var amtedit = staticQrCode_dataset.getValue("qtransedit");
     	var flag = 0;
@@ -92,11 +99,17 @@
     		alert("Merchant ID  is empty!");
     		return false;
     	}
+    	if(amtedit == "N" && amt == ""){
+    		alert("Transaction Amount should be provided!");
+    		return false;
+    	}
     	dwr.engine.setAsync(false);
     	generateQrCodeAction.checkMerID(merid,function(data){
-    		if(data == 2){
-    			alert("Merchant ID  does not exist");
+    		if(data == "-1"){
+    			alert("Merchant ID  does not exist!");
     			flag = 1;
+    		}else{
+    			_MerName_proxyUEN = data;
     		}
     	});
     	if(flag == 1){//商户号不存在
