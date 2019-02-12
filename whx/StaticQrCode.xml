@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommQry title="商户信息维护" type="call" interface="true" navigate=""
+	pagesize="10" async="true" databusid="" transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.hsbc.getter.ReportFileGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<!-- <Field id="qmerid" desc="StaticQrCode.Where.qmerid"  status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="15" default="" xpath="" require="true"/> -->
+		<Field id="qtransedit" desc="StaticQrCode.Where.qtransedit" rules="xssSave"  status="F" translated="DATA_DIC.2012" type="String" size="2" readonly="false" default="" edittype="radio" require="true" datatype="string" xpath="" />
+		<Field id="qmerid"     desc="StaticQrCode.Where.qmerid"	 status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="25" default="" xpath="" require="true"/>
+		<Field id="mername"     desc="StaticQrCode.Where.mername"	 status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="25" default="" xpath="" require="true"/>
+		<Field id="proxyvalue"     desc="StaticQrCode.Where.proxyvalue"	 status="F" edittype="text" rules="xssSave" datatype="string" readonly="false" primary="true" type="String" size="13" default="" xpath="" require="true"/>
+		<Field id="qdate" desc="StaticQrCode.Where.qdate" rules="xssSave" edittype="text" status="F" datatype="date" size="18" type="String" readonly="false" default="" require="false" xpath="" />
+		<Field id="qamt" desc="StaticQrCode.Where.qamt" rules="xssSave" edittype="text" status="F" datatype="currency" scale="2" type="String" size="13" default="" readonly="false" require="true"  xpath=""/>
+		<Field id="qtransno" desc="StaticQrCode.Where.qtransno" rules="xssSave" edittype="text" status="F" colspan="2"  datatype="string" type="String" size="25" default="" require="false"  xpath=""/>
+		<Field id="blank" desc=""  edittype="text" status="F" colspan="2"  datatype="string"  />
+	</Fields>
+	<Where>
+	</Where>
+	<Operations>
+	</Operations>
+</CommQry>
