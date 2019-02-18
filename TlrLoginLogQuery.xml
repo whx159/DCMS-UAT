@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CommQry title="日志查询" navigate="主页 &gt; 数据查询&gt; 用户登录日志查询" type="call"
+	interface="true" pagesize="10" async="true" databusid=""
+	transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.report.dataquery.getter.TlrLoginLogQueryGetter">
+	<Include id="BankParam" />
+	<PageQryExp type="XLS" limit="true" encoding="UTF-8" url="/trans/qryExp.do" desc="Log_Query"/>
+	<Fields>
+		<!-- status :F-基本信息中显示  N-不显示 D-详细信息中显示 A-基本、详细信息中都显示  -->
+		<!-- primary : true-作为表单项记录上传　false-不作为表单项上传 -->
+		<!-- 日志信息 -->
+		<Field id="id" desc="记录主键" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="false" size="32" status="N" default="" primary="true" xpath="/id" />
+
+		<Field id="tlrNo" desc="TlrLoginLogQuery.Field.tlrNo" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="false" size="20" status="F" default="" xpath="/tlrNo" />
+
+		<Field id="brNo" desc="TlrLoginLogQuery.Field.brNo" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="false" size="20" status="F" default="" xpath="/brNo" />
+
+		<Field id="loginSucTm" desc="TlrLoginLogQuery.Field.loginSucTm" require="" edittype="text" datatype="timestamp" method="com.huateng.ebank.business.common.CQMethod.getDateUTC"
+	 	  readonly="false" size="32" status="F" default="" xpath="/loginSucTm" />
+
+		<Field id="loginOutTm" desc="TlrLoginLogQuery.Field.loginOutTm" require="" edittype="text" datatype="timestamp" method="com.huateng.ebank.business.common.CQMethod.getDateUTC"
+	 	  readonly="false" size="32" status="F" default="" xpath="/loginOutTm" />
+
+		<Field id="loginFailTm" desc="TlrLoginLogQuery.Field.loginFailTm" require="" edittype="text" datatype="timestamp" method="com.huateng.ebank.business.common.CQMethod.getDateUTC"
+	 	  readonly="false" size="32" status="N" default="" xpath="/loginFailTm" />
+
+		<Field id="loginAddr" desc="TlrLoginLogQuery.Field.loginAddr" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="false" size="32" status="N" default="" xpath="/loginAddr" />
+
+		<Field id="loginRemark" desc="TlrLoginLogQuery.Field.loginRemark" require="" edittype="textarea" datatype="string" method="None"
+	 	  readonly="false" size="256" status="F" default="" xpath="/loginRemark" />
+
+		<Field id="sessionId" desc="会话id" require="" edittype="text" datatype="string" method="None"
+	 	  readonly="false" size="32" status="N" default="" xpath="/sessionId" />
+
+		<Field id="crtTm" desc="创建时间" require="" edittype="text" datatype="timestamp" method="None"
+	 	  readonly="false" size="32" status="N" default="" xpath="/crtTm" />
+	</Fields>
+	<Where>
+		<TextBox id="qtlrNo" type="String" operation="EQ" size="8"
+			desc="TlrLoginLogQuery.Where.qtlrNo" tip="TlrLoginLogQuery.Where.qtlrNo" index="0" />
+		<!--<Option id="qbrNo" operation="EQ" size=""-->
+			<!--desc="所属机构" tip="机构号" type="string" translated="CQ:BctlAllSelect"-->
+			<!--fieldmap="qbrNo=brno;qbrNoName=brcodeTypeName"-->
+			<!--viewField="brcodeTypeName" dropdowntype="dynamic" init="true"-->
+			<!--require="false" readOnly="" index="1"/>-->
+		<!-- <Option id="querydepartId" require="false"  desc="TlrLoginLogQuery.Where.querydepartId" datatype="string" index="1" translated="LIST:6841,6841-上海分行;5375,5375-北京分行;6097,6097-广州分行;" size="32"/> -->
+		<!-- <Option id="querydepartId" require="false"  desc="TlrLoginLogQuery.Where.querydepartId" datatype="string" index="1" translated="DATA_DIC.60001" size="32"/> -->
+		<DateTextBox id="startDate" desc="TlrLoginLogQuery.Where.startDate" tip="TlrLoginLogQuery.Where.qtlrNo"
+			require="false" status="F" datatype="date" method="None" size="150"
+			width="" primary="false" index="2" type="String" />
+		<DateTextBox id="endDate" desc="TlrLoginLogQuery.Where.endDate" tip="TlrLoginLogQuery.Where.qtlrNo" require="false"
+			status="F" datatype="date" method="None" size="150" width="" primary="false"
+			index="3" type="String" />
+		<TextBox id="qloginAddr" type="String" operation="EQ" size="30"
+			desc="TlrLoginLogQuery.Where.qloginAddr" tip="TlrLoginLogQuery.Where.qtlrNo" index="4"/>
+	</Where>
+	<Operations>
+
+
+	</Operations>
+</CommQry>
