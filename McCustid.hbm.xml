@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="resource.bean.hf">
+	<class name="McCustid" table="mc_custid">
+		<id column="ID" name="id" type="string" />
+		<property column="CUSTID" name="custid" type="string" />
+		<property column="ACCTCOUNTRY" name="acctcountry" type="string" />
+		<property column="ACCTNO" name="acctno" type="string" />
+		<property column="ACCTTYPE" name="accttype" type="string" />
+		<property column="ACCTNAME" name="acctname" type="string" />
+		<property column="ACCTSTATUS" name="acctstatus" type="string" />
+	</class>
+</hibernate-mapping>
