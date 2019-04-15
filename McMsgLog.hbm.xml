@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="resource.bean.hf">
+	<class name="McMsgLog" table="MC_MSG_LOG">
+		<id name="id" column="REQID" type="string" />
+		<property column="REQTS"         name="reqTS"         type="string"/>
+		<property column="REQCTRYCOD"    name="reqCtryCod"    type="string"/>
+		<property column="REQINSTT"      name="reqInstt"      type="string"/>
+		<property column="DLVYCHNL"      name="dlvyChnl"      type="string"/>
+		<property column="DESTADDR"      name="destAddr"      type="string"/>
+		<property column="SUBJCNTNT"     name="subjCntnt"     type="string"/>
+		<property column="ATCHNAME"      name="atchName"      type="string"/>
+		<property column="RETCODE"       name="retcode"       type="string"/>
+		<property column="RETMSG"        name="retmsg"        type="string"/>
+		<property column="DLVYSTATUS"        name="dlvystatus"        type="string"/>
+		<property column="FAILMSG"        name="failmsg"        type="string"/>
+		<property column="SENDTS"        name="sendts"        type="string"/>
+		<property column="MERID"        name="merid"        type="string"/>
+		<property column="ACCOUNT"        name="account"        type="string"/>
+		<property column="REPORTTYPENAME"        name="reportTypeName"        type="string"/>
+		<property column="REPORTPATH"        name="reportPath"        type="string"/>
+	</class>
+</hibernate-mapping>
+    

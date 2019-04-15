@@ -1223,6 +1223,7 @@ function McMerinfoList_dataset_afterChange(dataset,field){
 	    	}else{
 	    		McMerinfoList_dataset.setFieldReadOnly("commerceidnew",true);
 	    		McMerinfoList_dataset.setFieldRequired("commerceidnew",false);
+	    		McMerinfoList_dataset.setValue("commerceidnew","");
 	    	}
 	    }
 	    if(field.name=="posidexpirydate"){
@@ -1233,6 +1234,7 @@ function McMerinfoList_dataset_afterChange(dataset,field){
 	    	}else{
 	    		McMerinfoList_dataset.setFieldReadOnly("posidnew",true);
 	    		McMerinfoList_dataset.setFieldRequired("posidnew",false);
+	    		McMerinfoList_dataset.setValue("posidnew","");
 	    	}
 	    }
 	    if(field.name=="paymeidexpirydate"){
@@ -1243,6 +1245,7 @@ function McMerinfoList_dataset_afterChange(dataset,field){
 	    	}else{
 	    		McMerinfoList_dataset.setFieldReadOnly("paymeidnew",true);
 	    		McMerinfoList_dataset.setFieldRequired("paymeidnew",false);
+	    		McMerinfoList_dataset.setValue("paymeidnew","");
 	    	}
 	    }
 	    if(field.name=="billpidexpirydate"){
@@ -1253,6 +1256,7 @@ function McMerinfoList_dataset_afterChange(dataset,field){
 	    	}else{
 	    		McMerinfoList_dataset.setFieldReadOnly("billpidnew",true);
 	    		McMerinfoList_dataset.setFieldRequired("billpidnew",false);
+	    		McMerinfoList_dataset.setValue("billpidnew","");
 	    	}
 	    }
 	    
