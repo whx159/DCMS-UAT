@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommQry title="证书维护信息列表" type="call" interface="true" navigate=""
+	pagesize="10" async="true" databusid="" transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.hsbc.getter.McPubkeyCheckGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<Field id="opr"  desc="Common.Field.opr"  method="None" edittype="text" datatype="string" xpath="" />
+		<Field id="select" desc="McPubkeyList.Field.select" method="None" edittype="checkbox" datatype="boolean" xpath="" />	 
+		<Field id="clientidsel" desc="Client ID" status="F" require="true" edittype="select" rules="xssSave" datatype="string" readonly="false" primary="true" xpath="/mcpubkeypk/clientid" size="20" default="" translated="CQ:allCertificateSelect" fieldmap="clientidsel=minclient;clientid=minclient" viewField="minidAndName" />
+		<Field id="clientid" desc="API Client ID" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/mcpubkeypk/clientid" size="100"  />  
+		<Field id="secret" desc="CLIENT SECRET" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/secret" size="100"  />
+		<Field id="pubkey" desc="商户公钥" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/pubkey" size="3000"  />
+		<Field id="keyfilename" desc="证书名称" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/keyfilename" size="100"  />
+		<Field id="uptime" desc="McPubkeyList.Field.uptime" status="F" edittype="text" rules="xssSave" datatype="timestamp" readonly="false" xpath="/uptime" size="14"  />
+		<Field id="uptlr" desc="McPubkeyList.Field.uptlr" status="F"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/mcpubkeypk/uptlr" size="20"  />
+		<Field id="expirytime" desc="McPubkeyList.Field.rsv1" status="F"  edittype="text" rules="xssSave" datatype="timestamp" readonly="false" xpath="/expirytime" size="20" />
+		<Field id="rsv1" desc="McPubkeyList.Field.rsv1" status="F"  edittype="text" rules="xssSave" datatype="timestamp" readonly="false" xpath="/rsv1" size="20" />
+		<Field id="rsv2" desc="备用2" status="F"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv2" size="60" />
+		<Field id="rsv3" desc="备用3" status="F"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv3" size="100" />
+		<Field id="rsv4" desc="备用4" status="F"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv4" size="600" />
+		<Field id="rsv5" desc="备用5" status="F"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv5" size="1024" />
+		<Field id="rsv6" desc="备用6" status="F"  edittype="text" rules="xssSave" datatype="string" readonly="false" xpath="/rsv6" size="2048" />
+		
+		
+		
+		<Field id="status" desc="Common.Field.status" status="F"  edittype="select" rules="xssSave" datatype="string" readonly="false" xpath="/status" size="2" translated="DATA_DIC.1000" />
+		<Field id="prostatus" desc="Common.Field.prostatus" status="F"  edittype="select" rules="xssSave" datatype="string" readonly="false" xpath="/prostatus" size="1" translated="DATA_DIC.501" />
+		<Field id="action" desc="Common.Field.action" status="F"  edittype="select" rules="xssSave" datatype="string" readonly="false" xpath="/action" size="2" translated="DATA_DIC.1026" />
+		
+		<Field id="rejinfo" desc="McMerinfoList.Field.rejinfo" status="F"  edittype="text" rules="xssSave" datatype="String" readonly="false" xpath="/rejinfo" size="100" />
+		<Field id="modid" desc="Common.Field.modid" status="F"  edittype="text" rules="xssSave" datatype="String" readonly="false" xpath="/modid" size="20" />
+		<Field id="modtime" desc="Common.Field.modtime" status="F"  edittype="text" rules="xssSave" datatype="String" readonly="false" xpath="/modtime" size="19" />
+		<Field id="chkid" desc="Common.Field.chkid" status="F"  edittype="text" rules="xssSave" datatype="String" readonly="false" xpath="/chkid" size="20" />
+		<Field id="chktime" desc="Common.Field.chktime" status="F"  edittype="text" rules="xssSave" datatype="String" readonly="false" xpath="/chktime" size="19" />
+		<Field id="creid" desc="Common.Field.creid" status="F"  edittype="text" rules="xssSave" datatype="String" readonly="false" xpath="/creid" size="20" />
+		<Field id="cretime" desc="Common.Field.cretime" status="F"  edittype="text" rules="xssSave" datatype="String" readonly="false" xpath="/cretime" size="19" />
+		<Field id="country" desc="Country" status="F"  edittype="text" rules="xssSave" datatype="String" readonly="false" xpath="/country" size="6" />
+		
+		<Field id="lasttime" desc="Common.Field.lasttime" status="F"  edittype="text" rules="xssSave" datatype="String" readonly="false" xpath="/lasttime" size="19" />
+		<Field id="cretimeShow" method="com.huateng.ebank.business.common.CQMethod.getDateUTC" desc="Common.Field.cretime" status="F" edittype="text"  datatype="string" readonly="true" primary="true" type="String" size="14"  default="" xpath="/cretime"/>
+		<Field id="modtimeShow" method="com.huateng.ebank.business.common.CQMethod.getDateUTC" desc="Common.Field.modtime" status="F" edittype="text"  datatype="string" readonly="true" primary="true" type="String" size="14"  default="" xpath="/modtime"/>
+		<Field id="chktimeShow" method="com.huateng.ebank.business.common.CQMethod.getDateUTC" desc="Common.Field.chktime" status="F" edittype="text"  datatype="string" readonly="true" primary="true" type="String" size="14"  default="" xpath="/chktime"/>
+		
+		<Field id="cername" desc="McPubkeyList.Field.cername" status="F"  edittype="text" rules="xssSave" datatype="String" readonly="false" xpath="/cername" size="100" />
+		<Field id="posname" desc="McPubkeyList.Field.posname" status="F"  edittype="text" rules="xssSave" datatype="String" readonly="false" xpath="/posname" size="100" />
+		<Field id="headerinfo" desc="Common.Field.headerinfo" status="F"  edittype="textarea" rules="xssSave" datatype="String" readonly="false" xpath="/headerinfo" size="2048" />
+		
+		<Field id="approveStatusChoose" desc="Common.Message.Approve.Select" require="false"
+			edittype="select" datatype="string" method="None" readonly="false"
+			size="2" translated="DATA_DIC.1015" status="N" default="" xpath="" />
+		<Field id="approveResultChoose" desc="Common.Message.Approve.Explain" require="" edittype="text"
+			datatype="string" method="None" readonly="false" size="256" status="N"
+			default="" xpath="" />
+		
+	</Fields>
+	<Where>
+		<TextBox id="qclientid" desc="API Client ID" edittype="text" status="F" datatype="string" size="100" index="0" />
+	</Where>
+	<Operations>
+		<Button id="btAdd" name="btAdd" desc="McPubkeyList.Operations.btAdd" operation="" url="#" icon="icon-add" />
+		<Button id="btConfirm" name="btConfirm" desc="McPubkeyList.Operations.btConfirm" operation="asysubmit" url="#"  show="" group="" txn="" icon="icon-save" 
+		updateClass="com.huateng.hsbc.update.CertificateUpdate" />
+		<Button id="btApprove" desc="Common.Button.btApprove" operation="asysubmit" icon="icon-ok"
+			url="#" updateClass="com.huateng.hsbc.update.McPubkeyCheckUpdate" />
+		<Button id="btReject" desc="Common.Button.btReject" operation="asysubmit" icon="icon-no"
+			url="#" updateClass="com.huateng.hsbc.update.McPubkeyCheckUpdate" />
+	</Operations>
+</CommQry>
