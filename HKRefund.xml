@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommQry title="报表导出" type="call" interface="true" navigate=""
+	pagesize="10" async="true" databusid="" transdataactionurl="/trans/TransDataAction.do"
+	getterclassname="com.huateng.hsbc.getter.RefundDetailGetter">
+	<Include id="BankParam" />
+	<Fields>
+		<Field id="merid" desc="Merchant ID" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="15" default="" xpath="/merID" />	
+		<Field id="mername" desc="Merchant Name" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="15" default="" xpath="/merName" />	
+		<Field id="redate" desc="Refund Request Date" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="15" default="" xpath="/reDate" />	
+		<Field id="retime" desc="Refund Request Time" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/reTime" />	
+		<Field id="retxnid" desc="Refund Transaction Reference" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/reTxnID" />	
+		<Field id="recurrency" desc="Refund Currency" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/reCurrency" />	
+		<Field id="reamt" desc="Refund Amount" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/reAmt" />	
+		<Field id="restatus" desc="Refund Status" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/reStatus" />	
+		<Field id="orgintxnid" desc="Original Inward Transaction Reference" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/orgInTxnID" />	
+		<Field id="orgcurrency" desc="Original Txn Currency" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/orgCurrency" />	
+		<Field id="orgamt" desc="Original Txn Amount" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/orgAmt" />	
+		<Field id="orgdate" desc="Original Txn Date" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/orgDate" />	
+		<Field id="orgtime" desc="Original Txn Time" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/orgTime" />	
+		<Field id="orgmethod" desc="Original Payment Method" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/orgMethod" />	
+		<Field id="orgmertxnid" desc="Original Merchant Transaction Reference" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/orgMerTxnID" />	
+		<Field id="orgtxnchannel" desc="Original Txn Channel" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/orgTxnChannel" />	
+		<Field id="orgposvname" desc="Original Txn POS Vendor Name" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/orgPosVName" />	
+		<Field id="orgposmacid" desc="Original Txn POS Machine ID" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/orgPosMacID" />	
+		<Field id="orgempid" desc="Original Txn Employee ID" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/orgEmpID" />	
+		<Field id="ortxnsupinfo" desc="Original Txn - Supplementary Info" status="F" require="false" edittype="text" rules="xssSave" datatype="string" readonly="true" primary="true" type="String" size="25" default="" xpath="/orgTxnSupInfo" />	
+	</Fields>
+	<Where>
+	</Where>
+	<Operations>
+		<Button id="btClose" name="btClose" desc="Return" operation="" url="#" txn="" icon="icon-back" />
+	</Operations>
+</CommQry>
