@@ -133,6 +133,10 @@
 	<bean id="com.huateng.hsbc.billing.service.BillingVNService" class="com.huateng.hsbc.billing.service.BillingVNService"></bean>
 	<bean id="com.huateng.hsbc.reconciliations.service.ReconVNService" class="com.huateng.hsbc.reconciliations.service.ReconVNService">
 		<property name="billingVNService" ref="com.huateng.hsbc.billing.service.BillingVNService"></property>
+		<property name="feeMqService" ref="com.huateng.hsbc.mq.FeeMqService"></property>
+		<property name="chargeReport" ref="chargeReport"></property>
+		<property name="eodReportService" ref="eodReportService"></property>
+		<property name="incompatibleReportService" ref="incompatibleReportService"></property>
 	</bean>
 	<!-- add vn recon end -->
 </beans>
